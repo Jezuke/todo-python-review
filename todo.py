@@ -33,8 +33,8 @@ def create_task():
     return task
 
 def list_tasks(tasks):
-    for task in tasks:
-        print("*", task)
+    for task in range(len(tasks)):
+        print(f"{task+1}) {tasks[task]}")
     
 def main():
     tasks = []
@@ -52,6 +52,7 @@ def main():
                 tasks.append(task)
             elif choice == 2:
                 print("Tasks:")
+                print("---------")
                 list_tasks(tasks)
             elif choice == 3:
                 print("ADD DELETE_TASKS FN")
