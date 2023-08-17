@@ -35,6 +35,13 @@ def create_task():
 def list_tasks(tasks):
     for task in range(len(tasks)):
         print(f"{task+1}) {tasks[task]}")
+
+def delete_tasks(task,tasks):
+    print(f"Deleting task {task+1}...")
+    try:
+        tasks.pop(task)
+    except Exception as e:
+        print("Unable to delete the task due to the following error:", e)
     
 def main():
     tasks = []
@@ -48,14 +55,14 @@ def main():
             choice = int(input("Choose an option: "))
             if choice == 1:
                 task = create_task()
-                # print("Curr tasks:", tasks)
                 tasks.append(task)
             elif choice == 2:
                 print("Tasks:")
                 print("---------")
                 list_tasks(tasks)
             elif choice == 3:
-                print("ADD DELETE_TASKS FN")
+                task_choice = int(input("Which task would you like to delete? "))
+                delete_tasks(task_choice-1, tasks)
             elif choice == 4:
                 print_options()
             elif choice == 5:
