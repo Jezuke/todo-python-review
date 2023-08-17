@@ -11,7 +11,6 @@ Task:
  - id -> int
 """
 from os import system
-import uuid
 
 def print_options():
     main_options = """\n**** OPTIONS ****
